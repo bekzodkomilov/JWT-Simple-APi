@@ -17,6 +17,7 @@ public class StudentController : ControllerBase
         _logger = logger;
         _service = service;
     }
+    
     [HttpPost("/addstudent")]
     public async Task<IActionResult> AddStudent([FromForm] StudentModel model)
     {
@@ -27,24 +28,28 @@ public class StudentController : ControllerBase
         }
         return BadRequest();
     }
+
     [HttpGet("/getallstudent")]
     public async Task<IActionResult> GetAllStudent()
     {
         var res = await _service.GetAllStudentAsync();
         return Ok(res);
     }
+
     [HttpGet("/getstudentby{id}")]
     public async Task<IActionResult> GetStudentById(Guid id)
     {
         var res = await _service.GetStudentByIdAsync(id);
         return Ok(res);
     }
+
     [HttpDelete("/deletestudentby/{id}")]
     public async Task<IActionResult> DeleteStudent(Guid id)
     {
         var res = await _service.DeleteStudentIdAsync(id);
         return Ok(res);
     }
+
     [HttpPut("/update/{id}")]
     public async Task<IActionResult> Update([FromForm]StudentModel model,Guid id)
     {
@@ -57,5 +62,4 @@ public class StudentController : ControllerBase
         var massage = res.e is null ? "Success" : res.e.Message;
         return Ok(new{error,massage});
     }
-
 }
