@@ -11,8 +11,8 @@ using StudentLibrary.Data;
 namespace StudentLibrary.Migrations
 {
     [DbContext(typeof(StudentDbContext))]
-    [Migration("20220723193806_inti")]
-    partial class inti
+    [Migration("20220723234653_create")]
+    partial class create
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,15 @@ namespace StudentLibrary.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("BLOB");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("BLOB");
+
+                    b.Property<string>("Username")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

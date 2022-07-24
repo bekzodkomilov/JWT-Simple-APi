@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StudentLibrary.Mapper;
 using StudentLibrary.Model;
@@ -7,6 +8,7 @@ namespace StudentLibrary.Controller;
 
 [ApiController]
 [Route("/api/controller")]
+[Authorize]
 public class StudentController : ControllerBase
 {
     private readonly ILogger<StudentController> _logger;
@@ -17,7 +19,7 @@ public class StudentController : ControllerBase
         _logger = logger;
         _service = service;
     }
-    
+
     [HttpPost("/addstudent")]
     public async Task<IActionResult> AddStudent([FromForm] StudentModel model)
     {

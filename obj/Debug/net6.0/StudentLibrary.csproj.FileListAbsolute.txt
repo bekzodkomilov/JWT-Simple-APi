@@ -80,3 +80,8 @@
 /home/hp/vscode/StudentLibrary/bin/Debug/net6.0/runtimes/win-arm64/native/e_sqlite3.dll
 /home/hp/vscode/StudentLibrary/bin/Debug/net6.0/runtimes/win-x64/native/e_sqlite3.dll
 /home/hp/vscode/StudentLibrary/bin/Debug/net6.0/runtimes/win-x86/native/e_sqlite3.dll
+/home/hp/vscode/StudentLibrary/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/hp/vscode/StudentLibrary/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
+/home/hp/vscode/StudentLibrary/bin/Debug/net6.0/Scrutor.dll
+/home/hp/vscode/StudentLibrary/bin/Debug/net6.0/Swashbuckle.AspNetCore.Filters.dll
+/home/hp/vscode/StudentLibrary/bin/Debug/net6.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StudentLibrary.Migrations
 {
-    public partial class inti : Migration
+    public partial class create : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,8 +14,11 @@ namespace StudentLibrary.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Username = table.Column<string>(type: "TEXT", nullable: true),
                     LastName = table.Column<string>(type: "TEXT", nullable: true),
-                    FirstName = table.Column<string>(type: "TEXT", nullable: true)
+                    FirstName = table.Column<string>(type: "TEXT", nullable: true),
+                    PasswordHash = table.Column<byte[]>(type: "BLOB", nullable: true),
+                    PasswordSalt = table.Column<byte[]>(type: "BLOB", nullable: true)
                 },
                 constraints: table =>
                 {
