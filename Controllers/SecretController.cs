@@ -27,8 +27,4 @@ public class SecretController : ControllerBase
         var student = _service.GetAllStudentAsync();
         return Ok(student);
     }
-    [AllowAnonymous]
-    [HttpGet("/notsecret")]
-    public IActionResult NotSecret()
-        => Ok("it is not secter");
 }

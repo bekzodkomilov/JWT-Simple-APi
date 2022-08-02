@@ -40,7 +40,7 @@ builder.Services.AddDbContext<StudentDbContext>(options =>
     options.UseSqlite("Data Source=Data/app.db");
 },ServiceLifetime.Singleton);
 
-builder.Services.AddSingleton<StudentService>();
+builder.Services.AddSingleton<IStudentService, StudentService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddHttpContextAccessor();
 
@@ -53,6 +53,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

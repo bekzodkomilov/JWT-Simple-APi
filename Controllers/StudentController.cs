@@ -12,9 +12,9 @@ namespace StudentLibrary.Controller;
 public class StudentController : ControllerBase
 {
     private readonly ILogger<StudentController> _logger;
-    private readonly StudentService _service;
+    private readonly IStudentService _service;
 
-    public StudentController(ILogger<StudentController> logger, StudentService service)
+    public StudentController(ILogger<StudentController> logger, IStudentService service)
     {
         _logger = logger;
         _service = service;
