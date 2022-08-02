@@ -9,9 +9,6 @@ using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// builder.Services.AddDbContext<StudentDbContext>(options
-//     => options.UseSqlServer(builder.Configuration.GetConnectionString("StudentConnection")));
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options => {
