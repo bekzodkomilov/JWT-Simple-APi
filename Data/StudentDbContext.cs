@@ -10,4 +10,11 @@ public class StudentDbContext : DbContext
      public StudentDbContext(DbContextOptions<StudentDbContext> options)
         : base(options) { }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Student>() 
+                            .HasIndex(s => s.Username)
+                            .IsUnique();
+    }
+
 }

@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using StudentLibrary.Data;
 using StudentLibrary.Entites;
+using StudentLibrary.Mapper;
+using StudentLibrary.Model;
 
 namespace StudentLibrary.Service;
 
@@ -30,8 +32,8 @@ public class StudentService : IStudentService
         }
     }
 
-    public async Task<List<Student>> GetAllStudentAsync()
-        => await _context.Students.ToListAsync();
+    public async Task<List<StudentModel>> GetAllStudentAsync()
+        => await _context.Students.Select(a => a.ToModel()).ToListAsync();
 
     public async Task<Student> GetStudentByIdAsync(Guid id)
     {

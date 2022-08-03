@@ -17,6 +17,7 @@ public static class StudentMapper
     public static StudentModel ToModel(this Student student)
         => new StudentModel
         {
+            Id = student.Id,
             LastName = student.LastName,
             FirstName = student.FirstName
         };
