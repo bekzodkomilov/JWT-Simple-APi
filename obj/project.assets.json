@@ -2895,11 +2895,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/hp/vscode/StudentLibrary/StudentLibrary.csproj",
+      "projectUniqueName": "/home/hp/SimpleApi/StudentLibrary.csproj",
       "projectName": "StudentLibrary",
-      "projectPath": "/home/hp/vscode/StudentLibrary/StudentLibrary.csproj",
+      "projectPath": "/home/hp/SimpleApi/StudentLibrary.csproj",
       "packagesPath": "/home/hp/.nuget/packages/",
-      "outputPath": "/home/hp/vscode/StudentLibrary/obj/",
+      "outputPath": "/home/hp/SimpleApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/hp/.nuget/NuGet/NuGet.Config"

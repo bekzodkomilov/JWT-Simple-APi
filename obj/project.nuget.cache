@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3Cc2WCQsMj+kbY3s49G3U6t9dNodtmFSMkUylHYlfXiN5UotJcwhLBxnxulj6U7s07jhSuIGBIFM1JQmrc+hAQ==",
+  "dgSpecHash": "2mBRvqgFQq7PvzK0FkRFeHdUmD5bqcF0VC8VkWouXflJeuZKsUSC3htqBpP+OMXRrx4zfq6CsN1JcPBhz8XO2Q==",
   "success": true,
-  "projectFilePath": "/home/hp/vscode/StudentLibrary/StudentLibrary.csproj",
+  "projectFilePath": "/home/hp/SimpleApi/StudentLibrary.csproj",
   "expectedPackageFiles": [
     "/home/hp/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/hp/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.7/microsoft.aspnetcore.authentication.jwtbearer.6.0.7.nupkg.sha512",
