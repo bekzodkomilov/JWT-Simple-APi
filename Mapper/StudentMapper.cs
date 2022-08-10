@@ -10,6 +10,8 @@ public static class StudentMapper
         => new Student()
         {
             Id = Guid.NewGuid(),
+            Username = model.Username,
+            Password = model.Password,
             LastName = model.LastName,
             FirstName = model.FirstName
         };
@@ -17,7 +19,8 @@ public static class StudentMapper
     public static StudentModel ToModel(this Student student)
         => new StudentModel
         {
-            Id = student.Id,
+            Username = student.Username,
+            Password = student.Password,
             LastName = student.LastName,
             FirstName = student.FirstName
         };

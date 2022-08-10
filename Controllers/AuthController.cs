@@ -7,7 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using StudentLibrary.Data;
 using StudentLibrary.Entites;
+using StudentLibrary.Mapper;
 using StudentLibrary.Model;
+using StudentLibrary.Service;
 
 namespace StudentLibrary.Controller;
 
@@ -15,27 +17,24 @@ namespace StudentLibrary.Controller;
 [Route("[controller]")]
 public class AuthController : ControllerBase
 {
+    private readonly IStudentService _service;
     private readonly ILogger<AuthController> _logger;
     private readonly StudentDbContext _context;
     private readonly IConfiguration _config;
 
-    public AuthController(ILogger<AuthController> logger, StudentDbContext context, IConfiguration config)
+    public AuthController(ILogger<AuthController> logger, StudentDbContext context, IConfiguration config, IStudentService service)
     {
+        _service = service;
         _logger = logger;
         _context = context;
         _config = config;
     }
-     [HttpPost("/register")]
-    public async Task<IActionResult> Register(Register newUser)
+    
+    [HttpPost("/register")]
+    public async Task<IActionResult> Register([FromForm] Student newUser)
     {
         var (hash, salt) = generateHash(newUser.Password); 
-        var user = new Student();
-        user.Username = newUser.Username;
-        user.PasswordHash = hash;
-        user.PasswordSalt = salt;
-
-        await _context.Students.AddAsync(user);
-        await _context.SaveChangesAsync();
+        var user = await _service.InsertStudentAsync(newUser);
         return Ok(user);
     }
 
