@@ -20,16 +20,16 @@ public class StudentController : ControllerBase
         _service = service;
     }
 
-    [HttpPost("/addstudent")]
-    public async Task<IActionResult> AddStudent([FromForm] StudentModel model)
-    {
-        if(ModelState.IsValid)
-        {
-            await _service.InsertStudentAsync(model.ToEntity());
-            return Ok(model);
-        }
-        return BadRequest();
-    }
+    // [HttpPost("/addstudent")]
+    // public async Task<IActionResult> AddStudent([FromForm] StudentModel model)
+    // {
+    //     if(ModelState.IsValid)
+    //     {
+    //         await _service.InsertStudentAsync(model.ToEntity());
+    //         return Ok(model);
+    //     }
+    //     return BadRequest();
+    // }
 
     [HttpGet("/getallstudent")]
     public async Task<IActionResult> GetAllStudent()

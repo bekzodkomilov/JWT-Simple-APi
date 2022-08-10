@@ -6,6 +6,7 @@ namespace StudentLibrary.Data;
 public class StudentDbContext : DbContext
 {
     public DbSet<Student> Students { get; set; }
+    public DbSet<StudentHashes> studentHashes { get; set; }
 
      public StudentDbContext(DbContextOptions<StudentDbContext> options)
         : base(options) { }
@@ -13,6 +14,9 @@ public class StudentDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Student>() 
+                            .HasIndex(s => s.Username)
+                            .IsUnique();
+        modelBuilder.Entity<StudentHashes>()
                             .HasIndex(s => s.Username)
                             .IsUnique();
     }
